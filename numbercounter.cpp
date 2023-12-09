@@ -99,6 +99,14 @@ void NumberCounter::InitCtrl()
 		else if (pAct == m_pActionNewCounter)
 		{
 			this->AddNewCounter("");
+			this->m_listItemWidgets.back()->SetUnsigned(m_pActionToggleUnsigned->isChecked());
+		}
+		else if (pAct == m_pActionToggleUnsigned)
+		{
+			for (auto &item : this->m_listItemWidgets)
+			{
+				item->SetUnsigned(m_pActionToggleUnsigned->isChecked());
+			}
 		}
 		else if (pAct == m_pActionQuit)
 		{
@@ -126,6 +134,12 @@ void NumberCounter::InitCtrl()
 	m_pActionNewCounter = pAction;
 	pAction->setFont(ftMenu);
 	pAction->setCheckable(false);
+	m_pMenuFile->addAction(pAction);
+
+	pAction = new QAction("Set Positive Only");
+	m_pActionToggleUnsigned = pAction;
+	pAction->setFont(ftMenu);
+	pAction->setCheckable(true);
 	m_pMenuFile->addAction(pAction);
 
 	pAction = new QAction("Quit");

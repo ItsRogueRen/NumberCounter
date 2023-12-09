@@ -187,7 +187,7 @@ void NumberCounterItemWidget::ValChanged(int nVal)
 {
 	int nCurrVal = m_pLabelDigit->text().trimmed().toInt();
 	nCurrVal += nVal;
-	if (nCurrVal < 0)
+	if (m_isUnsigned && nCurrVal < 0)
 	{
 		nCurrVal = 0;
 	}
@@ -214,4 +214,9 @@ void NumberCounterItemWidget::SaveVal2File()
 	}
 	m_pMainWnd->AddCounterFileName(strFullFileName);
 
+}
+
+void NumberCounterItemWidget::SetUnsigned(bool isUnsigned)
+{
+	m_isUnsigned = isUnsigned;
 }
