@@ -80,6 +80,7 @@ private:
     QAction* m_pActionDark;
     QAction* m_pActionLight;
     QAction* m_pActionNewCounter;
+    QAction* m_pActionToggleUnsigned;
     QAction* m_pActionQuit;
 
 	QColor m_colorForeground = Qt::white;

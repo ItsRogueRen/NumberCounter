@@ -18,6 +18,8 @@ public:
 	void ChangeTheme();
 	void SaveVal2File();
 
+	void SetUnsigned(bool isUnsigned);
+
 protected:
 
 	void Init();
@@ -45,4 +47,5 @@ private:
 	NumberCounter* m_pMainWnd;
 	QString m_strFileName;
 
+	bool m_isUnsigned = false;
 };
